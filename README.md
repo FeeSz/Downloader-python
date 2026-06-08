@@ -5,6 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
 ![PySimpleGUI](https://img.shields.io/badge/PySimpleGUI-GUI-green?style=for-the-badge)
 ![yt-dlp](https://img.shields.io/badge/yt--dlp-Downloader-red?style=for-the-badge)
+![FFmpeg](https://img.shields.io/badge/FFmpeg-Audio_Converter-orange?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge)
 
 Aplicação desktop desenvolvida em Python para download de vídeos e áudios do YouTube com autenticação de usuários e interface gráfica intuitiva.
@@ -15,17 +16,18 @@ Aplicação desktop desenvolvida em Python para download de vídeos e áudios do
 
 # 📖 Sobre o Projeto
 
-O **YouTube Downloader Pro** é uma aplicação desktop criada em Python que permite realizar downloads de vídeos e músicas do YouTube em diferentes formatos.
+O **YouTube Downloader Pro** é uma aplicação desktop criada em Python com foco em automação de downloads de conteúdo do YouTube.
 
-A aplicação possui:
+Através de uma interface gráfica simples e intuitiva, o usuário pode realizar downloads de vídeos em MP4 ou extrair apenas o áudio em MP3, escolhendo livremente a pasta de destino.
 
-- Sistema de login;
-- Interface gráfica amigável;
-- Download em MP4;
-- Conversão para MP3;
-- Escolha de pasta de destino;
-- Tratamento de erros;
-- Feedback em tempo real para o usuário.
+Este projeto foi desenvolvido para praticar:
+
+- Desenvolvimento de interfaces gráficas;
+- Programação orientada a eventos;
+- Integração com bibliotecas externas;
+- Manipulação de arquivos;
+- Tratamento de exceções;
+- Consumo de conteúdo online.
 
 ---
 
@@ -33,21 +35,36 @@ A aplicação possui:
 
 ## 🔐 Tela de Login
 
-Adicione uma captura da tela:
+A aplicação inicia com uma tela de autenticação simples, responsável por validar as credenciais antes de liberar o acesso ao sistema.
 
-```md
-![Login](./images/login.png)
-```
+<p align="center">
+  <img src="./images/interface-1.png" alt="Tela de Login" width="600">
+</p>
+
+### Recursos
+
+- Login de usuários
+- Campo de senha protegido
+- Opção de lembrar credenciais
+- Interface intuitiva
 
 ---
 
-## 📥 Tela de Download
+## 📥 Tela Principal
 
-Adicione uma captura da tela:
+Após o login, o usuário acessa a área principal responsável pelos downloads.
 
-```md
-![Downloader](./images/downloader.png)
-```
+<p align="center">
+  <img src="./images/interface-2.png" alt="Tela Principal" width="700">
+</p>
+
+### Recursos
+
+- Campo para URL do YouTube
+- Escolha entre MP4 e MP3
+- Seleção de diretório de destino
+- Área de mensagens e logs
+- Botões de download, limpeza e saída
 
 ---
 
@@ -57,19 +74,19 @@ Adicione uma captura da tela:
 
 ✅ Download de vídeos do YouTube
 
-✅ Download de áudio em MP3
+✅ Extração de áudio em MP3
 
-✅ Download de vídeo em MP4
+✅ Download em MP4
 
-✅ Escolha da pasta de destino
+✅ Escolha personalizada da pasta de destino
 
-✅ Criação automática da pasta de download
+✅ Criação automática de diretórios
 
-✅ Interface gráfica intuitiva
+✅ Interface gráfica amigável
 
 ✅ Tratamento de erros
 
-✅ Feedback visual durante o processamento
+✅ Feedback em tempo real para o usuário
 
 ---
 
@@ -80,9 +97,9 @@ Adicione uma captura da tela:
 | Python | Linguagem principal |
 | PySimpleGUI | Interface gráfica |
 | yt-dlp | Download de vídeos |
-| FFmpeg | Conversão para MP3 |
+| FFmpeg | Conversão de áudio |
 | pathlib | Manipulação de caminhos |
-| os | Manipulação de diretórios |
+| os | Manipulação de arquivos e diretórios |
 
 ---
 
@@ -103,9 +120,9 @@ YouTube-Downloader-Pro/
 
 # 🔐 Sistema de Login
 
-A aplicação possui autenticação local utilizando credenciais pré-configuradas.
+A autenticação é realizada localmente através de credenciais previamente cadastradas.
 
-## Usuários de teste
+### Usuários de Teste
 
 ```text
 Usuário: admin
@@ -121,25 +138,15 @@ Senha: 123456
 
 # 📥 Download de Conteúdo
 
-Após o login, o usuário pode:
+Após a autenticação, o usuário pode escolher entre dois formatos:
 
-### Baixar vídeo
+## 🎬 MP4
 
-```text
-Formato: MP4
-```
+Realiza o download do vídeo na melhor qualidade disponível.
 
-Obtém a melhor qualidade disponível.
+## 🎵 MP3
 
----
-
-### Baixar áudio
-
-```text
-Formato: MP3
-```
-
-Realiza extração automática do áudio utilizando FFmpeg.
+Extrai apenas o áudio utilizando FFmpeg para conversão automática.
 
 ---
 
@@ -148,18 +155,18 @@ Realiza extração automática do áudio utilizando FFmpeg.
 ```mermaid
 graph TD
 
-A[Iniciar Sistema] --> B[Tela de Login]
+A[Iniciar Aplicação] --> B[Tela de Login]
 
 B --> C{Credenciais Válidas?}
 
-C -->|Não| D[Mensagem de Erro]
+C -->|Não| D[Exibir Erro]
 D --> B
 
 C -->|Sim| E[Tela Principal]
 
 E --> F[Inserir URL]
 
-F --> G[Escolher MP3 ou MP4]
+F --> G[Escolher Formato]
 
 G --> H[Selecionar Pasta]
 
@@ -176,7 +183,7 @@ J -->|Não| L[Mensagem de Erro]
 
 # 🚀 Como Executar
 
-## 1. Clonar o Repositório
+## 1. Clone o repositório
 
 ```bash
 git clone https://github.com/FeeSz/youtube-downloader-pro.git
@@ -184,7 +191,7 @@ git clone https://github.com/FeeSz/youtube-downloader-pro.git
 
 ---
 
-## 2. Entrar na Pasta
+## 2. Entre na pasta
 
 ```bash
 cd youtube-downloader-pro
@@ -192,7 +199,7 @@ cd youtube-downloader-pro
 
 ---
 
-## 3. Instalar Dependências
+## 3. Instale as dependências
 
 ```bash
 pip install PySimpleGUI
@@ -201,21 +208,21 @@ pip install yt-dlp
 
 ---
 
-## 4. Instalar FFmpeg
+## 4. Instale o FFmpeg
 
-Necessário para conversão de MP3.
+Necessário para conversão de áudio para MP3.
 
 ### Windows
 
-Baixe:
+Baixe o FFmpeg:
 
 https://ffmpeg.org/download.html
 
-Adicione o executável ao PATH do sistema.
+Após a instalação, adicione o executável ao PATH do sistema.
 
 ---
 
-## 5. Executar
+## 5. Execute a aplicação
 
 ```bash
 python app_downloader.py
@@ -225,52 +232,53 @@ python app_downloader.py
 
 # 📋 Exemplo de Uso
 
-1. Faça login.
-2. Cole o link do vídeo.
-3. Escolha MP3 ou MP4.
+1. Faça login no sistema.
+2. Cole a URL do vídeo desejado.
+3. Escolha MP4 ou MP3.
 4. Defina uma pasta de destino.
 5. Clique em **📥 Baixar**.
-6. Aguarde a conclusão do processo.
+6. Aguarde o processamento.
 
 ---
 
 # ⚠️ Tratamento de Erros
 
-A aplicação identifica situações como:
+A aplicação trata automaticamente situações como:
 
 - URL inválida;
 - Vídeo indisponível;
-- Falha na conexão;
+- Falha de conexão;
 - FFmpeg não instalado;
-- Erros de download.
+- Problemas durante o download;
+- Falhas de conversão.
 
-Todas as mensagens são exibidas diretamente na interface.
+Todas as mensagens são exibidas diretamente na interface gráfica.
 
 ---
 
 # 💡 Conceitos Aplicados
 
-- Interfaces gráficas desktop
-- Programação orientada a eventos
-- Consumo de conteúdo online
-- Manipulação de arquivos
-- Tratamento de exceções
-- Automação de downloads
-- Organização modular de código
+- Programação Orientada a Eventos
+- Desenvolvimento Desktop com Python
+- Integração com Bibliotecas Externas
+- Tratamento de Exceções
+- Manipulação de Arquivos
+- Automação de Downloads
+- Interface Gráfica (GUI)
 
 ---
 
 # 🚀 Melhorias Futuras
 
-- [ ] Histórico de downloads
-- [ ] Barra de progresso real
+- [ ] Barra de progresso em tempo real
 - [ ] Download de playlists
 - [ ] Download de canais completos
+- [ ] Histórico de downloads
 - [ ] Sistema de cadastro de usuários
 - [ ] Banco de dados SQLite
 - [ ] Tema escuro
-- [ ] Exportação de logs
 - [ ] Atualização automática
+- [ ] Geração de executável (.exe)
 
 ---
 
