@@ -38,7 +38,7 @@ Este projeto foi desenvolvido para praticar:
 A aplicação inicia com uma tela de autenticação simples, responsável por validar as credenciais antes de liberar o acesso ao sistema.
 
 <p align="center">
-  <img src="./images/interface-1.png" alt="Tela de Login" width="600">
+  <img src="./images/login.png" alt="Tela de Login" width="600">
 </p>
 
 ### Recursos
@@ -55,7 +55,7 @@ A aplicação inicia com uma tela de autenticação simples, responsável por va
 Após o login, o usuário acessa a área principal responsável pelos downloads.
 
 <p align="center">
-  <img src="./images/interface-2.png" alt="Tela Principal" width="700">
+  <img src="./images/downloader.png" alt="Tela Principal" width="700">
 </p>
 
 ### Recursos
@@ -109,7 +109,6 @@ Após o login, o usuário acessa a área principal responsável pelos downloads.
 YouTube-Downloader-Pro/
 │
 ├── app_downloader.py
-├── README.md
 │
 └── images/
     ├── login.png
