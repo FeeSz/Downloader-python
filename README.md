@@ -38,7 +38,7 @@ Este projeto foi desenvolvido para praticar:
 A aplicação inicia com uma tela de autenticação simples, responsável por validar as credenciais antes de liberar o acesso ao sistema.
 
 <p align="center">
-  <img src="./images/interface-1.png" alt="Tela de Login" width="600">
+  <img src="/images/interface-1.png" alt="Tela de Login" width="600">
 </p>
 
 ### Recursos
